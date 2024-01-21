@@ -27,11 +27,100 @@
     <button type="reset">Reset</button>
   </div>
 </form>
+<form id="inscriptionForm">
+  <label for="nom">Nom :</label>
+  <input type="text" id="nom" name="nom" required>
+
+  <label for="prenom">Prénom :</label>
+  <input type="text" id="prenom" name="prenom" required>
+
+  <label for="email">Email :</label>
+  <input type="email" id="email" name="email" required>
+
+  <label>Classe actuelle :</label>
+  <input type="radio" id="1ere" name="classe" value="1ere"> <label for="1ere">1ère</label>
+  <input type="radio" id="tle" name="classe" value="tle"> <label for="tle">Tle</label>
+
+  <label for="axePrefere">Axe préféré :</label>
+  <select id="axePrefere" name="axePrefere" required>
+      <option value="" disabled selected>Sélectionner un axe</option>
+      <option value="CD">CréationDesign</option>
+      <option value="3d">3d</option>
+      <option value="CDEB">CDEB</option>
+  </select>
+
+  <button type="button" onclick="validerFormulaire()">S'inscrire</button>
+</form>
+
+<script>
+  function validerFormulaire() {
+      var nom = document.getElementById('nom').value;
+      var prenom = document.getElementById('prenom').value;
+      var email = document.getElementById('email').value;
+      var classe = document.querySelector('input[name="classe"]:checked');
+      var axePrefere = document.getElementById('axePrefere').value;
+
+      if (nom && prenom && email && classe && axePrefere) {
+          alert('Inscription réussie !');
+          // Vous pouvez envoyer les données à votre serveur ici
+      } else {
+          alert('Veuillez remplir tous les champs obligatoires.');
+      }
+  }
+</script>
+
+</body>
+</html>
+
+
 <div class="MentionLegales">
 <p>Mention Légales</p>
 <p>Site Web crée dans le cadre d'un projet scolaire</p>
 <p>Adam Chekhchoukh IIM Promo 2027</p>
-  <img class="logo-iim"src="/l">
+  <img class="logo-iim"src="logo-iim">
 </div>
   </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription Journée Portes Ouvertes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
